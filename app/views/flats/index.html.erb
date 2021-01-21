@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 id="title">Travel at home</h1>
+  <div>
+    <% if @flats.count <= 1 %> 
+      <%= @flats.count %> flat 
+    <% else %>
+      <%= @flats.count %> flats 
+    <% end %>
+    ready to welcome your family.
+  </div>
+
+  <div class="cards-grid">
+      <% @flats.each do |flat| %>
+          <div class="card mt-3">
+            <div class="card-photo" style="background-image: url('<%= flat.photos.first %>');">
+            </div>
+            <div class="card-description">
+              <div class="card-name" ><%= flat.name %></div>
+              <div class="card-address"><i class="fas fa-map-marker card-icon"></i></i> <%= flat.address %></div>
+              <div class="card-infos">
+                <div class="card-guests">
+                  <i class="fas fa-user card-icon"></i> <%= flat.number_of_guests %>
+                </div>
+                <div class="card-price">
+                  <i class="fas fa-euro-sign card-icon"></i></i> <%= flat.price_per_night %>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <%= link_to 'More info', flat_path(flat), class: 'btn btn-success card-primary-btn'  %>
+              <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-outline-success' %>
+              <%= link_to 'Remove', flat_path(flat), class: 'btn btn-outline-success', method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+      <% end %>
+  </div>
+
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>">
+  </div>
+  
+</div>

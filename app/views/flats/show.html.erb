@@ -1,0 +1,37 @@
+<div class="flat-header" style="background-image: linear-gradient(to bottom, rgba(14, 0, 0, 0.4), rgba(30, 221, 136, 0.15)),
+    url('<%= @flat.photos.first %>');">
+    <div class="container">
+      <h2 class="flat-name"><%= @flat.name %></h2>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-12 col-lg-9">
+        <div class="flat-informations flat-column">
+          <div class="flat-brief-description">
+            <div><strong><%= @flat.description %></strong></div>
+            <div><%= @flat.number_of_guests %> guests · <%= @flat.price_per_night %> € / night</div>
+            <div><%= @flat.address %></div>
+          </div>  
+          <div class="flat-text">
+            <%= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' * 20 %>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-3">
+      <div class="card booking-box flat-column">
+        <div class="booking-title">Book your dates</div>
+        <form action="#" method="/" class="form-group booking-group-inputs">
+          <input type="text" class="form-control booking-input" placeholder="Arrival" onfocus="(this.type='date')" onblur="(this.type='text')">
+          <input type="text" class="form-control booking-input" placeholder="Departure" onfocus="(this.type='date')" onblur="(this.type='text')">
+          <input type="number" class="form-control booking-input" placeholder="Guest(s)">
+          <button type="submit" class="btn btn-success card-primary-btn">Book</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

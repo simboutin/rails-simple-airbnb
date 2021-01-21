@@ -1,0 +1,50 @@
+.flat-header {
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.flat-name {
+  color: white;
+  font-weight: bold;
+}
+
+.flat-column {
+  margin: 32px 0 32px 0;
+}
+
+.flat-informations {
+  margin-right: 16px;
+}
+
+.flat-brief-description {
+  padding-bottom: 16px;
+  border-bottom: 1px solid $gray;
+}
+
+.flat-text {
+  margin-top: 16px;
+}
+
+.booking-box {
+  position: sticky;
+  top: 16px;
+  padding: 16px;
+}
+
+.booking-title {
+  color: $green;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.booking-group-inputs {
+  margin-bottom: 0;
+}
+
+.booking-input {
+  margin-bottom: 1rem;
+}

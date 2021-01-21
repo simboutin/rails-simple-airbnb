@@ -7,7 +7,24 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import '/home/simon/code/simboutin/rails-simple-airbnb/node_modules/mapbox-gl/dist/mapbox-gl';
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+a {
+  text-decoration: none;
+  color: $green;
+}
+
+a:hover {
+  color: $green;
+  text-decoration: none;
+}
+
+h1 {
+  color: $green;
+  font-weight: bolder;
+}

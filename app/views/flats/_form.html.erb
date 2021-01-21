@@ -1,0 +1,13 @@
+<%= simple_form_for(@flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address, class: 'flat-address' %>
+  <%= f.input :description %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :price_per_night %>
+  <%= f.input :photos, placeholder: 'Enter a url', input_html: { multiple: true } %>
+  <% if @flat.new_record? %>
+    <%= f.submit 'Add', class: 'btn btn-success' %>
+  <% else %>
+    <%= f.submit 'Update', class: 'btn btn-success' %>
+  <% end %>
+<% end %>

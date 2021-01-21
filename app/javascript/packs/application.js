@@ -3,9 +3,19 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import "channels"
+import Rails from "@rails/ujs";
+import Turbolinks from "turbolinks";
+import "channels";
+import 'bootstrap';
 
-Rails.start()
-Turbolinks.start()
+import { initAutocomplete } from '../plugins/init_autocomplete'
+import { initMapbox } from '../plugins/init_mapbox'
+
+Rails.start();
+Turbolinks.start();
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  initAutocomplete();
+  initMapbox();
+});

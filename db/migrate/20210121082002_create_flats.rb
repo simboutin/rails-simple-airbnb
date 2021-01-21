@@ -6,9 +6,9 @@ class CreateFlats < ActiveRecord::Migration[6.1]
       t.text :description, null: false
       t.integer :price_per_night, null: false
       t.integer :number_of_guests, null: false
-      t.float :rating, array: true
-      t.date :days_of_availability, array: true
-      t.string :photos, array: true
+      t.float :rating
+      t.date :days_of_availability
+      t.string :photos
 
       t.timestamps
     end
