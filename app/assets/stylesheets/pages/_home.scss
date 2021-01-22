@@ -3,3 +3,46 @@
 h1 {
   margin: 32px 0 0 0;
 }
+
+.home-content {
+  display: flex;
+}
+
+#map {
+  width: 200px;
+  height: 100vh;
+  margin-top: 32px;
+  display: none;
+  position: sticky;
+  top: 0;
+}
+
+
+@media (min-width: 600px) {
+  #map {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  #map {
+    display: block;
+  }
+}
+
+.cards-grid {
+  flex-grow: 1;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.info-window-img {
+  margin-bottom: 8px;
+}

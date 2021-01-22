@@ -5,11 +5,10 @@ class FlatsController < ApplicationController
     if params[:keyword]
       @keyword = params[:keyword]
       @flats = Flat.all.where("name LIKE '%#{@keyword}%'")
-      set_markers
     else
       @flats = Flat.all
-      set_markers
     end
+    set_markers
   end
 
   def new
@@ -35,7 +34,10 @@ class FlatsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @flats = Flat.where('id = ?', params[:id])
+    set_markers
+  end
 
   def destroy
     @flat.destroy
@@ -56,7 +58,9 @@ class FlatsController < ApplicationController
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: 'info_window', locals: { flat: flat }),
+        image_url: flat.photos.first
       }
     end
   end
